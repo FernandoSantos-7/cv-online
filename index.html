@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando Santos | Analista de Sistemas & Ciberseguridad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --bg: #0d1117; --neon: #00ff00; --text: #ffffff; --border: #30363d; --blue: #3498db; }
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; line-height: 1.6; text-align: center; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+        header { padding: 40px 0; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+        .subtitle { color: var(--neon); font-weight: bold; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .terminal-text { text-align: left; font-family: 'Courier New', monospace; color: var(--neon); background: #000; padding: 20px; border: 1px solid var(--border); border-radius: 8px; margin: 25px auto; min-height: 100px; white-space: pre-wrap; box-shadow: 0 0 15px rgba(0,255,0,0.1); }
+        .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
+        .social-links a { display: flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; padding: 12px 20px; border: 1px solid var(--border); border-radius: 8px; transition: 0.3s; font-size: 0.9rem; font-weight: 500; background: #161b22; }
+        .social-links a:hover { border-color: var(--neon); color: var(--neon); box-shadow: 0 0 10px rgba(0,255,0,0.2); transform: translateY(-2px); }
+        .cv-btn { border-color: var(--blue) !important; color: var(--blue) !important; }
+        .cv-btn:hover { background: var(--blue) !important; color: white !important; }
+        .disabled { opacity: 0.5; cursor: not-allowed; border-style: dashed !important; }
+        section { padding: 40px 0; border-bottom: 1px solid var(--border); text-align: left; }
+        h2 { color: var(--neon); font-size: 1.4rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FERNANDO SANTOS</h1>
+            <p class="subtitle">ANALISTA DE SISTEMAS DE INFORMACIÓN</p>
+            <div id="terminal-content" class="terminal-text"></div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/FernandoSantos-7" target="_blank"><i class="fab fa-github"></i> GitHub (chmod777)</a>
+                <a href="cv-fernando-santos.pdf" target="_blank" class="cv-btn"><i class="fas fa-file-pdf"></i> Ver CV Completo</a>
+                <a href="#" class="disabled" title="En trámite"><i class="fas fa-graduation-cap"></i> Analista de Sistemas (Título)</a>
+            </div>
+        </header>
+        <section>
+            <h2><i class="fas fa-user-tag"></i> Perfil Profesional</h2>
+            <p>Especialista en identificar y resolver problemas complejos mediante pensamiento lógico y analítico. Con capacidad para trabajar bajo presión y en equipo, aportando soluciones innovadoras en entornos de alta demanda tecnológica.</p>
+        </section>
+        <section>
+            <h2><i class="fas fa-history"></i> Trayectoria Laboral</h2>
+            <h3>Analista de Sistemas y Monitoreo</h3>
+            <p>Ministerio de Capital Humano | Ago 2025 - Presente</p>
+            <ul>
+                <li>Seguimiento de programas nacionales y mantenimiento de control de datos.</li>
+                <li>Atención técnica a jurisdicciones y monitoreo de sistemas críticos.</li>
+            </ul>
+        </section>
+    </div>
+    <script>
+        const text = `> Accediendo como ScorpionSF...\n> Rol: Analista de Sistemas | Ciberseguridad\n> Ubicación: Ministerio de Capital Humano\n> Progreso: 28 materias aprobadas.\n> Estado: Sistema listo para nuevos desafíos.`;
+        let i = 0;
+        function type() { if(i < text.length) { document.getElementById('terminal-content').innerHTML += text.charAt(i); i++; setTimeout(type, 35); } }
+        window.onload = type;
+    </script>
+</body>
+</html>
