@@ -50,6 +50,7 @@
         #type-text { color: var(--terminal-green); white-space: pre-wrap; }
 
         h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+        
         .card { 
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;
             padding: 20px; margin-bottom: 20px; transition: 0.3s;
@@ -60,9 +61,23 @@
         .card .date { float: right; color: var(--text-dim); font-size: 0.8rem; }
         .card ul { margin-top: 15px; margin-left: 20px; font-size: 0.9rem; color: var(--text-dim); }
 
+        /* Stack Tecnológico con Animación de Colores Individuales */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
-        .skill-item { background: #21262d; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; text-align: center; font-size: 0.85rem; font-weight: 500; }
-        .skill-highlight { color: var(--terminal-green); border-color: var(--terminal-green); }
+        .skill-item { 
+            background: #21262d; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; 
+            text-align: center; font-size: 0.85rem; font-weight: 500; transition: 0.3s; cursor: default;
+        }
+        .skill-item:hover { transform: scale(1.08); background: var(--card-bg); }
+        
+        /* Colores específicos al pasar el cursor */
+        .skill-kali:hover { border-color: #fca326; color: #fca326; } 
+        .skill-html:hover { border-color: #e34f26; color: #e34f26; } 
+        .skill-js:hover { border-color: #f7df1e; color: #f7df1e; } 
+        .skill-pentest:hover { border-color: #39ff14; color: #39ff14; } 
+        .skill-python:hover { border-color: #3776ab; color: #3776ab; } 
+        .skill-siem:hover { border-color: #ff4500; color: #ff4500; } 
+        .skill-sql:hover { border-color: #00758f; color: #00758f; } 
+        .skill-react:hover { border-color: #61dafb; color: #61dafb; } 
 
         .footer-btns { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
         .btn { 
@@ -127,14 +142,14 @@
     <div id="skills">
         <h2><i class="fas fa-microchip"></i> Stack Tecnológico</h2>
         <div class="skills-grid">
-            <div class="skill-item skill-highlight">Kali Linux</div>
-            <div class="skill-item">HTML5 / CSS3</div>
-            <div class="skill-item">JavaScript (ES6+)</div>
-            <div class="skill-item">Pentesting Tools</div>
-            <div class="skill-item">Python (Django)</div>
-            <div class="skill-item">SIEM Monitoring</div>
-            <div class="skill-item">SQL Server Sec</div>
-            <div class="skill-item">React / Node.js</div>
+            <div class="skill-item skill-kali">Kali Linux</div>
+            <div class="skill-item skill-html">HTML5 / CSS3</div>
+            <div class="skill-item skill-js">JavaScript (ES6+)</div>
+            <div class="skill-item skill-pentest">Pentesting Tools</div>
+            <div class="skill-item skill-python">Python (Django)</div>
+            <div class="skill-item skill-siem">SIEM Monitoring</div>
+            <div class="skill-item skill-sql">SQL Server Sec</div>
+            <div class="skill-item skill-react">React / Node.js</div>
         </div>
     </div>
 
