@@ -69,7 +69,11 @@
         }
         .btn-main { background: var(--terminal-green); color: #000; }
         .btn-sec { border: 1px solid var(--border-color); color: var(--text-main); }
+        .btn-blue { background: #0077b5; color: #fff; } /* Estilo LinkedIn */
         .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+        
+        /* Estilo para el botón de título próximamente */
+        .btn-disabled { background: #30363d; color: #8b949e; cursor: not-allowed; pointer-events: none; }
     </style>
 </head>
 <body>
@@ -104,7 +108,7 @@
             <div class="company">Ministerio de Capital Humano de la Nación</div>
             <ul>
                 <li>Monitoreo de seguridad en red y gestión de incidentes en infraestructura crítica gubernamental.</li>
-                <li>Control de integridad de datos y gestión de incidentes de seguridad.</li>
+                <li>Control de integridad de datos y gestión de incidentes de seguridad en el sector público.</li>
                 <li>Atención técnica y soporte especializado en ciberdefensa gubernamental.</li>
             </ul>
         </div>
@@ -134,8 +138,13 @@
     </div>
 
     <div class="footer-btns">
-        <a href="CV_Fernando_Santos_ATS.pdf" target="_blank" class="btn btn-main"><i class="fas fa-file-pdf"></i> Descargar CV Pro</a>
-        <a href="https://github.com/FernandoSantos-7" target="_blank" class="btn btn-sec"><i class="fab fa-github"></i> Proyectos GitHub</a>
+        <a href="CV_Fernando_Santos_ATS_Final.pdf" target="_blank" class="btn btn-main"><i class="fas fa-file-pdf"></i> Descargar CV</a>
+        
+        <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank" class="btn btn-blue"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        
+        <a href="https://github.com/FernandoSantos-7" target="_blank" class="btn btn-sec"><i class="fab fa-github"></i> GitHub</a>
+        
+        <a href="#" class="btn btn-disabled"><i class="fas fa-graduation-cap"></i> Título (En trámite)</a>
     </div>
 </div>
 
@@ -143,7 +152,7 @@
     const text = `> chmod 777 access_granted...
 > User: Fernando Santos
 > Role: Cybersecurity Analyst / SOC Analyst
-> Degree: Graduado en Sistemas
+> Education: Graduado en Sistemas
 > Status: Monitoreando infraestructura crítica gubernamental...`;
 
     let i = 0;
