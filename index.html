@@ -14,6 +14,7 @@
             --text-main: #c9d1d9;
             --text-dim: #8b949e;
             --border-color: #30363d;
+            --linkedin-blue: #0077b5;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -22,7 +23,7 @@
         nav {
             position: fixed; top: 0; width: 100%; background: rgba(13, 17, 23, 0.95);
             border-bottom: 1px solid var(--border-color); z-index: 1000; padding: 15px 0;
-            display: flex; justify-content: center; gap: 30px; backdrop-filter: blur(5px);
+            display: flex; justify-content: center; gap: 40px; backdrop-filter: blur(5px);
         }
         nav a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: var(--terminal-green); }
@@ -59,8 +60,9 @@
         .card .date { float: right; color: var(--text-dim); font-size: 0.8rem; }
         .card ul { margin-top: 15px; margin-left: 20px; font-size: 0.9rem; color: var(--text-dim); }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
-        .skill-item { background: #21262d; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; text-align: center; font-size: 0.85rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+        .skill-item { background: #21262d; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; text-align: center; font-size: 0.85rem; font-weight: 500; }
+        .skill-highlight { color: var(--terminal-green); border-color: var(--terminal-green); }
 
         .footer-btns { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
         .btn { 
@@ -69,11 +71,9 @@
         }
         .btn-main { background: var(--terminal-green); color: #000; }
         .btn-sec { border: 1px solid var(--border-color); color: var(--text-main); }
-        .btn-blue { background: #0077b5; color: #fff; } /* Estilo LinkedIn */
-        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
-        
-        /* Estilo para el botón de título próximamente */
+        .btn-linkedin { background: var(--linkedin-blue); color: #fff; }
         .btn-disabled { background: #30363d; color: #8b949e; cursor: not-allowed; pointer-events: none; }
+        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -81,8 +81,7 @@
 <nav>
     <a href="#inicio">Inicio</a>
     <a href="#experiencia">Experiencia</a>
-    <a href="#skills">Skills</a>
-    <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank">LinkedIn</a>
+    <a href="#skills">Habilidades</a>
 </nav>
 
 <div class="container" id="inicio">
@@ -100,7 +99,7 @@
     </div>
 
     <div id="experiencia">
-        <h2><i class="fas fa-shield-alt"></i> Experiencia en Seguridad</h2>
+        <h2><i class="fas fa-shield-alt"></i> Experiencia Profesional</h2>
         
         <div class="card">
             <span class="date">2025 - Presente</span>
@@ -119,41 +118,42 @@
             <div class="company">Acus ECO Agencia</div>
             <ul>
                 <li>Hardening de aplicaciones web y mitigación de vulnerabilidades OWASP.</li>
-                <li>Administración segura de bases de datos y control de accesos.</li>
+                <li>Administración segura de bases de datos y control de accesos privilegiados.</li>
                 <li>Implementación de controles de seguridad en infraestructura crítica gubernamental.</li>
             </ul>
         </div>
     </div>
 
     <div id="skills">
-        <h2><i class="fas fa-code"></i> Stack Tecnológico</h2>
+        <h2><i class="fas fa-microchip"></i> Stack Tecnológico</h2>
         <div class="skills-grid">
-            <div class="skill-item">Pentesting (Nmap/Metasploit)</div>
-            <div class="skill-item">Linux Hardening</div>
+            <div class="skill-item skill-highlight">Kali Linux</div>
+            <div class="skill-item">HTML5 / CSS3</div>
+            <div class="skill-item">JavaScript (ES6+)</div>
+            <div class="skill-item">Pentesting Tools</div>
             <div class="skill-item">Python (Django)</div>
-            <div class="skill-item">SIEM Tools</div>
+            <div class="skill-item">SIEM Monitoring</div>
+            <div class="skill-item">SQL Server Sec</div>
             <div class="skill-item">React / Node.js</div>
-            <div class="skill-item">SQL Server / DB Sec</div>
         </div>
     </div>
 
     <div class="footer-btns">
         <a href="CV_Fernando_Santos_ATS_Final.pdf" target="_blank" class="btn btn-main"><i class="fas fa-file-pdf"></i> Descargar CV</a>
-        
-        <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank" class="btn btn-blue"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        
+        <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank" class="btn btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/FernandoSantos-7" target="_blank" class="btn btn-sec"><i class="fab fa-github"></i> GitHub</a>
-        
         <a href="#" class="btn btn-disabled"><i class="fas fa-graduation-cap"></i> Título (En trámite)</a>
     </div>
 </div>
 
 <script>
-    const text = `> chmod 777 access_granted...
-> User: Fernando Santos
-> Role: Cybersecurity Analyst / SOC Analyst
-> Education: Graduado en Sistemas
-> Status: Monitoreando infraestructura crítica gubernamental...`;
+    const text = `> chmod 777 access_granted... [OK]
+> Fetching profile: Fernando Santos
+> Role: Cybersecurity Analyst / SOC Analyst [ACTIVE]
+> Education: Graduado en Sistemas de Información
+> Env: Monitoreando infraestructura crítica gubernamental...
+> Tech Stack: Kali Linux, JS, Python, SQL, Pentesting Tools...
+> Connection: Secure & ready for deployment.`;
 
     let i = 0;
     const speed = 25;
