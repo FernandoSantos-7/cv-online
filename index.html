@@ -3,179 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando Santos | Analista de Sistemas & Ciberseguridad</title>
+    <title>Fernando Santos | Cybersecurity Analyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #161616;
-            --accent-color: #00ff41;
-            --text-main: #e0e0e0;
-            --text-dim: #a0a0a0;
-            --border-color: #333;
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-color: #238636; /* Verde GitHub/Seguridad */
+            --terminal-green: #39ff14;
+            --text-main: #c9d1d9;
+            --text-dim: #8b949e;
+            --border-color: #30363d;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
 
-        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-
-        /* Navegación */
         nav {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 600px; background: rgba(22, 22, 22, 0.8);
-            backdrop-filter: blur(10px); border: 1px solid var(--border-color);
-            border-radius: 50px; z-index: 1000; padding: 10px 20px;
-            display: flex; justify-content: space-around; align-items: center;
+            position: fixed; top: 0; width: 100%; background: rgba(13, 17, 23, 0.95);
+            border-bottom: 1px solid var(--border-color); z-index: 1000; padding: 15px 0;
+            display: flex; justify-content: center; gap: 30px; backdrop-filter: blur(5px);
+        }
+        nav a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--terminal-green); }
+
+        .container { max-width: 900px; margin: 100px auto 50px; padding: 0 20px; }
+
+        .hero { text-align: left; margin-bottom: 40px; }
+        .badge { 
+            display: inline-block; background: rgba(35, 134, 54, 0.2); color: #3fb950; 
+            padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px;
         }
 
-        nav a { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: var(--accent-color); }
+        h1 { font-size: 2.5rem; color: #f0f6fc; margin-bottom: 5px; }
+        .tagline { font-size: 1.2rem; color: var(--terminal-green); font-family: 'Courier New', Courier, monospace; margin-bottom: 25px; }
 
-        /* Hero Section */
-        .container { max-width: 800px; margin: 120px auto 50px; padding: 0 20px; }
-
-        .status-badge {
-            display: inline-flex; align-items: center; background: rgba(0, 255, 65, 0.1);
-            color: var(--accent-color); padding: 5px 15px; border-radius: 20px;
-            font-size: 0.8rem; font-weight: bold; margin-bottom: 20px;
-            border: 1px solid rgba(0, 255, 65, 0.3);
+        /* Terminal - Ahora más compacta y rápida */
+        .terminal {
+            background: #000; border: 1px solid var(--border-color); border-radius: 6px;
+            padding: 15px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 50px;
         }
-        .status-dot { width: 8px; height: 8px; background: var(--accent-color); border-radius: 50%; margin-right: 8px; animation: pulse 2s infinite; }
-
-        h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: -1px; }
-        .subtitle { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 30px; }
-
-        /* Terminal Style */
-        .terminal-box {
-            background: #000; border: 1px solid var(--border-color); border-radius: 8px;
-            padding: 20px; font-family: 'Courier New', Courier, monospace;
-            margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .terminal-header { display: flex; gap: 8px; margin-bottom: 15px; }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .terminal-header { display: flex; gap: 6px; margin-bottom: 10px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-        #terminal-text { color: var(--accent-color); white-space: pre-wrap; font-size: 0.95rem; }
+        #type-text { color: var(--terminal-green); }
 
-        /* Cards Section */
-        .section-title { font-size: 1.5rem; margin: 40px 0 20px; display: flex; align-items: center; gap: 10px; }
-        .card {
-            background: var(--card-bg); border: 1px solid var(--border-color);
-            border-radius: 12px; padding: 25px; margin-bottom: 20px;
-            transition: transform 0.3s, border-color 0.3s;
+        /* Secciones de Experiencia */
+        h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
+        .card { 
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;
+            padding: 20px; margin-bottom: 20px; transition: 0.3s;
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
-        .card h3 { margin-bottom: 5px; color: #fff; }
-        .card .date { color: var(--accent-color); font-size: 0.85rem; margin-bottom: 15px; display: block; }
-        .card p { color: var(--text-dim); font-size: 0.95rem; }
+        .card:hover { border-color: var(--terminal-green); transform: translateX(5px); }
+        .card h3 { color: #f0f6fc; margin-bottom: 5px; }
+        .card .company { color: var(--terminal-green); font-weight: bold; font-size: 0.9rem; }
+        .card .date { float: right; color: var(--text-dim); font-size: 0.8rem; }
+        .card ul { margin-top: 15px; margin-left: 20px; font-size: 0.9rem; color: var(--text-dim); }
 
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
-        .skill-tag {
-            background: #1e1e1e; border: 1px solid var(--border-color);
-            padding: 10px; border-radius: 8px; text-align: center;
-            font-size: 0.85rem; color: var(--text-main);
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .skill-item { background: #21262d; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; text-align: center; font-size: 0.85rem; }
+
+        .footer-btns { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
+        .btn { 
+            padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 8px; transition: 0.3s;
         }
-
-        /* Botones */
-        .btn-group { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
-        .btn {
-            padding: 12px 25px; border-radius: 8px; text-decoration: none;
-            font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 10px;
-        }
-        .btn-primary { background: var(--text-main); color: #000; }
-        .btn-primary:hover { background: var(--accent-color); transform: scale(1.05); }
-        .btn-secondary { border: 1px solid var(--border-color); color: var(--text-main); }
-        .btn-secondary:hover { border-color: var(--accent-color); color: var(--accent-color); }
-        .disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
-
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            nav { font-size: 0.7rem; }
-        }
+        .btn-main { background: var(--terminal-green); color: #000; }
+        .btn-sec { border: 1px solid var(--border-color); color: var(--text-main); }
+        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#habilidades">Skills</a>
-        <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank">LinkedIn</a>
-    </nav>
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#skills">Skills</a>
+    <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank">LinkedIn</a>
+</nav>
 
-    <div class="container" id="inicio">
-        <div class="status-badge">
-            <span class="status-dot"></span> Disponible para nuevos desafíos
-        </div>
-        
+<div class="container" id="inicio">
+    <div class="hero">
+        <div class="badge">● SISTEMA OPERATIVO: KALI LINUX</div>
         <h1>Fernando Santos</h1>
-        <p class="subtitle">Analista de Sistemas de Información Recibido & Ciberseguridad en proceso</p>
+        <div class="tagline">> Cybersecurity Analyst | SOC Analyst Tier 1</div>
+    </div>
 
-        <div class="terminal-box">
-            <div class="terminal-header">
-                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-            </div>
-            <div id="terminal-text"></div>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+        </div>
+        <div id="type-text"></div>
+    </div>
+
+    <div id="experiencia">
+        <h2><i class="fas fa-shield-alt"></i> Experiencia en Seguridad</h2>
+        
+        <div class="card">
+            <span class="date">2025 - Presente</span>
+            <h3>Analista de Ciberseguridad & Monitoreo</h3>
+            <div class="company">Ministerio de Capital Humano de la Nación</div>
+            <ul>
+                <li>Monitoreo de infraestructura crítica y detección de anomalías en red.</li>
+                <li>Control de integridad de datos y gestión de incidentes de seguridad.</li>
+                <li>Soporte técnico avanzado aplicado a ciberdefensa estatal.</li>
+            </ul>
         </div>
 
-        <div id="experiencia">
-            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
-            <div class="card">
-                <h3>Analista de Sistemas</h3>
-                <span class="date">Ministerio de Capital Humano de la Nación | 2025 - Presente</span>
-                <p>Gestión de procesos de información, análisis de requerimientos y soporte técnico especializado en infraestructura estatal.</p>
-            </div>
-        </div>
-
-        <div id="habilidades">
-            <h2 class="section-title"><i class="fas fa-shield-halved"></i> Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-tag">Kali Linux</div>
-                <div class="skill-tag">Python (Django)</div>
-                <div class="skill-tag">Network Security</div>
-                <div class="skill-tag">Html / Css / JS</div>
-                <div class="skill-tag">Pentesting</div>
-                <div class="skill-tag">SQL Server</div>
-                <div class="skill-tag">Git / GitHub</div>
-                <div class="skill-tag">Linux Hardening</div>
-            </div>
-        </div>
-
-        <div class="btn-group">
-            <a href="cv-fernando-santos.pdf" target="_blank" class="btn btn-primary">
-                <i class="fas fa-file-pdf"></i> Ver CV Completo
-            </a>
-            <a href="#" class="btn btn-secondary disabled">
-                <i class="fas fa-graduation-cap"></i> Título (En trámite)
-            </a>
-            <a href="https://github.com/FernandoSantos-7" target="_blank" class="btn btn-secondary">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+        <div class="card">
+            <span class="date">2019 - 2025</span>
+            <h3>SOC Analyst / Analista de Seguridad</h3>
+            <div class="company">Acus ECO Agencia</div>
+            <ul>
+                <li>Hardening de aplicaciones web y mitigación de vulnerabilidades OWASP.</li>
+                <li>Administración segura de bases de datos y control de accesos.</li>
+                <li>Relevamiento de requerimientos técnicos para arquitecturas seguras.</li>
+            </ul>
         </div>
     </div>
 
-    <script>
-        const text = `> Accediendo como chmod777...
-> Sistema Operativo: Kali Linux / Debian
-> Formación: Ciberseguridad (Educación IT)
-> Especialidad: Pentesting & Hardening
-> Analista de Sistemas: 28 materias aprobadas Finalizado - (Título en trámite)
-> Estado: Escaneando oportunidades IT...`;
+    <div id="skills">
+        <h2><i class="fas fa-code"></i> Stack Tecnológico</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Pentesting (Nmap/Metasploit)</div>
+            <div class="skill-item">Linux Hardening</div>
+            <div class="skill-item">Python (Django)</div>
+            <div class="skill-item">SIEM Tools</div>
+            <div class="skill-item">React / Node.js</div>
+            <div class="skill-item">SQL Server / DB Sec</div>
+        </div>
+    </div>
 
-        let i = 0;
-        const speed = 40;
+    <div class="footer-btns">
+        <a href="CV_Fernando_Santos_ATS.pdf" target="_blank" class="btn btn-main"><i class="fas fa-file-pdf"></i> Descargar CV Pro</a>
+        <a href="https://github.com/FernandoSantos-7" target="_blank" class="btn btn-sec"><i class="fab fa-github"></i> Proyectos GitHub</a>
+    </div>
+</div>
 
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("terminal-text").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-            }
+<script>
+    const text = `> chmod 777 access_granted...
+> User: Fernando Santos
+> Degree: Analista de Sistemas [GRADUADO]
+> Current: Especialización Ciberseguridad (EduIT)
+> Status: Escaneando amenazas y nuevas oportunidades...`;
+
+    let i = 0;
+    const speed = 30; // Más rápido para no distraer
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("type-text").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
         }
+    }
+    window.onload = typeWriter;
+</script>
 
-        window.onload = typeWriter;
-    </script>
 </body>
 </html>
