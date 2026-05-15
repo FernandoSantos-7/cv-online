@@ -9,7 +9,7 @@
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
-            --accent-color: #238636; /* Verde GitHub/Seguridad */
+            --accent-color: #238636;
             --terminal-green: #39ff14;
             --text-main: #c9d1d9;
             --text-dim: #8b949e;
@@ -38,7 +38,6 @@
         h1 { font-size: 2.5rem; color: #f0f6fc; margin-bottom: 5px; }
         .tagline { font-size: 1.2rem; color: var(--terminal-green); font-family: 'Courier New', Courier, monospace; margin-bottom: 25px; }
 
-        /* Terminal - Ahora más compacta y rápida */
         .terminal {
             background: #000; border: 1px solid var(--border-color); border-radius: 6px;
             padding: 15px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem;
@@ -47,9 +46,8 @@
         .terminal-header { display: flex; gap: 6px; margin-bottom: 10px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-        #type-text { color: var(--terminal-green); }
+        #type-text { color: var(--terminal-green); white-space: pre-wrap; }
 
-        /* Secciones de Experiencia */
         h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
         .card { 
             background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px;
@@ -85,9 +83,9 @@
 
 <div class="container" id="inicio">
     <div class="hero">
-        <div class="badge">● SISTEMA OPERATIVO: KALI LINUX</div>
+        <div class="badge">● LOCATION: BUENOS AIRES, ARGENTINA</div>
         <h1>Fernando Santos</h1>
-        <div class="tagline">> Cybersecurity Analyst | SOC Analyst </div>
+        <div class="tagline">> Cybersecurity Analyst | SOC Analyst Tier 1</div>
     </div>
 
     <div class="terminal">
@@ -105,9 +103,9 @@
             <h3>Analista de Ciberseguridad & Monitoreo</h3>
             <div class="company">Ministerio de Capital Humano de la Nación</div>
             <ul>
-                <li>Monitoreo de infraestructura crítica y detección de anomalías en red.</li>
+                <li>Monitoreo de seguridad en red y gestión de incidentes en infraestructura crítica gubernamental.</li>
                 <li>Control de integridad de datos y gestión de incidentes de seguridad.</li>
-                <li>Soporte técnico avanzado aplicado a ciberdefensa estatal.</li>
+                <li>Atención técnica y soporte especializado en ciberdefensa gubernamental.</li>
             </ul>
         </div>
 
@@ -118,7 +116,7 @@
             <ul>
                 <li>Hardening de aplicaciones web y mitigación de vulnerabilidades OWASP.</li>
                 <li>Administración segura de bases de datos y control de accesos.</li>
-                <li>Relevamiento de requerimientos técnicos para arquitecturas seguras.</li>
+                <li>Implementación de controles de seguridad en infraestructura crítica gubernamental.</li>
             </ul>
         </div>
     </div>
@@ -144,12 +142,12 @@
 <script>
     const text = `> chmod 777 access_granted...
 > User: Fernando Santos
-> Degree: Analista de Sistemas [GRADUADO]
-> Current: Especialización Ciberseguridad (Educación IT)
-> Status: Escaneando amenazas y nuevas oportunidades...`;
+> Role: Cybersecurity Analyst / SOC Analyst
+> Degree: Graduado en Sistemas
+> Status: Monitoreando infraestructura crítica gubernamental...`;
 
     let i = 0;
-    const speed = 30; // Más rápido para no distraer
+    const speed = 25;
 
     function typeWriter() {
         if (i < text.length) {
