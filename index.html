@@ -70,11 +70,11 @@
         .card .date { float: right; color: var(--text-dim); font-size: 0.8rem; }
         .card ul { margin-top: 15px; margin-left: 20px; font-size: 0.9rem; color: var(--text-dim); }
 
-        /* FASE 2: DASHBOARD SIEM / SOC STYLE */
+        /* DASHBOARD SOC SIEM */
         .siem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .siem-card {
             background: #000; border: 1px solid var(--border-color); border-radius: 6px; padding: 20px;
-            font-family: 'Courier New', Courier, monospace; position: relative; overflow: hidden;
+            font-family: 'Courier New', Courier, monospace; position: relative;
         }
         .siem-card:hover { border-color: var(--terminal-green); }
         .siem-title { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
@@ -100,7 +100,7 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 95, 86, 0); }
         }
 
-        /* Stack Tecnológico Animado */
+        /* STACK TECNOLÓGICO ANIMADO */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
         .skill-item { 
             background: #21262d; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; 
@@ -251,7 +251,7 @@
     }
     window.onload = typeWriter;
 
-    // LÓGICA DE LA TERMINAL INTERACTIVA
+    // SCRIPT DE INTERACTIVIDAD RESTAURADO
     cmdInput.addEventListener("keydown", function(e) {
         if (e.key === "Enter") {
             let input = cmdInput.value.toLowerCase().trim();
@@ -282,10 +282,9 @@
         }
     });
 
-    // LÓGICA INTERACTIVA FASE 2: SIMULADOR DE TRÁFICO SIEM (Contador dinámico)
+    // CONTADOR DINÁMICO DEL PANEL SOC
     let eventCount = 1240;
     setInterval(() => {
-        // Simula que entran eventos aleatorios de logs cada pocos segundos
         let increment = Math.floor(Math.random() * 4) + 1;
         eventCount += increment;
         document.getElementById("count-events").innerText = eventCount.toLocaleString();
