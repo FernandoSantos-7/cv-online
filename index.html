@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
 /* 1. CONFIGURACIÓN BASE Y COLORES MOCKUP */
 :root {
@@ -86,7 +86,7 @@ nav a:hover { color: var(--terminal-green); }
 h1 { color: #f0f6fc; font-size: 3.5rem; line-height: 1.1; margin-bottom: 10px; }
 .target-role { color: var(--terminal-green); font-family: 'Space Mono', monospace; font-size: 1.2rem; }
 
-/* 4. FASE 1: TERMINAL INTERACTIVA CHMOD777 (Intacta y funcional) */
+/* 4. FASE 1: TERMINAL INTERACTIVA CHMOD777 */
 .terminal-container {
   background: #000;
   border-radius: 8px;
@@ -139,6 +139,12 @@ h2 {
   margin-top: 60px;
   padding-bottom: 15px;
 }
+
+/* Aplicamos mis colores específicos a los h2 directamente */
+#experiencia h2 { color: var(--title-exp); }
+#soc h2 { color: var(--title-soc); }
+#bunker h2 { color: var(--title-cert); }
+#skills h2 { color: var(--title-stack); }
 
 .card {
   background: var(--card-bg);
@@ -197,7 +203,7 @@ h2 {
   100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
 }
 
-/* 7. FASE 3: BÚNKER DE CERTIFICADOS HEXAGONAL (Placeholder) */
+/* 7. FASE 3: BÚNKER DE CERTIFICADOS HEXAGONAL */
 .credential-grid {
   display: grid;
   gap: 20px;
@@ -216,7 +222,6 @@ h2 {
   cursor: default;
 }
 
-/* Efecto de activación de color de la maqueta */
 .credential-tile img {
   border-radius: 8px;
   height: 120px;
@@ -260,7 +265,7 @@ h2 {
 
 .skill-item:hover { transform: translateY(-10px) scale(1.03); }
 
-/* Animación de colores individuales de la maqueta */
+/* Animación de colores individuales */
 .skill-kali:hover { border-color: #fca326; color: #fca326; background: rgba(252, 163, 38, 0.05); }
 .skill-python:hover { border-color: #3776ab; color: #3776ab; background: rgba(55, 118, 171, 0.05); }
 .skill-siem:hover { border-color: #ff4500; color: #ff4500; background: rgba(255, 69, 0, 0.05); }
@@ -328,7 +333,7 @@ h2 {
     </div>
 
     <div id="experiencia">
-        <h2 style="color: var(--title-exp);"><i class="fa-solid fa-shield-halved"></i> Experiencia Profesional</h2>
+        <h2><i class="fa-solid fa-shield-halved"></i> Experiencia Profesional</h2>
         <div class="card">
             <div class="card-header">
                 <span class="company">Ministerio de Capital Humano</span>
@@ -353,7 +358,7 @@ h2 {
     </div>
 
     <div id="soc">
-        <h2 style="color: var(--title-soc);"><i class="fa-solid fa-chart-line"></i> Centro de Monitoreo SOC (Simulación SIEM)</h2>
+        <h2><i class="fa-solid fa-chart-line"></i> Centro de Monitoreo SOC (Simulación SIEM)</h2>
         <div class="siem-grid">
             <div class="siem-card">
                 <p class="siem-title">Logs de Red Analizados</p>
@@ -369,7 +374,7 @@ h2 {
     </div>
 
     <div id="bunker">
-        <h2 style="color: var(--title-cert);"><i class="fa-solid fa-vault"></i> Búnker de Certificados</h2>
+        <h2><i class="fa-solid fa-vault"></i> Búnker de Certificados</h2>
         <p style="color: var(--text-dim); margin-bottom: 25px; font-size: 0.9rem; max-width: 700px; font-family: 'Space Mono', monospace;">
             > Acá van a ir mis certificaciones a medida que las voy teniendo durante mi formación en ciberseguridad.
         </p>
@@ -393,7 +398,7 @@ h2 {
     </div>
 
     <div id="skills">
-        <h2 style="color: var(--title-stack);"><i class="fa-solid fa-microchip"></i> Stack</h2>
+        <h2><i class="fa-solid fa-microchip"></i> Stack</h2>
         <div class="skills-grid">
             <div class="skill-item skill-kali">
                 <i class="fab fa-linux fa-3x" style="color: #fca326;"></i>
@@ -441,7 +446,7 @@ const text = `> chmod 777 access_granted... [OK]
 
 let i = 0;
 const speed = 20;
-const terminal = document.getElementById("terminal-content");
+const terminal = document.getElementById("terminal-content"); // Vinculado al ID correcto del contenedor
 const inputArea = document.getElementById("input-area");
 const input = document.getElementById("cmd-input");
 
