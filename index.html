@@ -39,6 +39,7 @@
         h1 { font-size: 2.5rem; color: #f0f6fc; margin-bottom: 5px; }
         .tagline { font-size: 1.2rem; color: var(--terminal-green); font-family: 'Courier New', Courier, monospace; margin-bottom: 25px; }
 
+        /* TERMINAL INTERACTIVA CHMOD777 */
         .terminal {
             background: #000; border: 1px solid var(--border-color); border-radius: 6px;
             padding: 15px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem;
@@ -47,7 +48,14 @@
         .terminal-header { display: flex; gap: 6px; margin-bottom: 10px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-        #type-text { color: var(--terminal-green); white-space: pre-wrap; }
+        
+        #type-text { color: var(--terminal-green); white-space: pre-wrap; margin-bottom: 10px; }
+        
+        .terminal-input-line { display: flex; align-items: center; color: var(--terminal-green); gap: 5px; }
+        .terminal-input-line input {
+            background: transparent; border: none; color: var(--terminal-green);
+            font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; width: 100%; outline: none;
+        }
 
         h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
         
@@ -61,7 +69,7 @@
         .card .date { float: right; color: var(--text-dim); font-size: 0.8rem; }
         .card ul { margin-top: 15px; margin-left: 20px; font-size: 0.9rem; color: var(--text-dim); }
 
-        /* Stack Tecnológico con Animación de Colores Individuales */
+        /* Stack Tecnológico Animado */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
         .skill-item { 
             background: #21262d; border: 1px solid var(--border-color); padding: 10px; border-radius: 6px; 
@@ -69,7 +77,6 @@
         }
         .skill-item:hover { transform: scale(1.08); background: var(--card-bg); }
         
-        /* Colores específicos al pasar el cursor */
         .skill-kali:hover { border-color: #fca326; color: #fca326; } 
         .skill-html:hover { border-color: #e34f26; color: #e34f26; } 
         .skill-js:hover { border-color: #f7df1e; color: #f7df1e; } 
@@ -111,6 +118,10 @@
             <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
         </div>
         <div id="type-text"></div>
+        <div class="terminal-input-line" id="input-area" style="display: none;">
+            <span>chmod777@fsantos:~#</span>
+            <input type="text" id="cmd-input" placeholder="Escribí 'help' o 'scan'..." autocomplete="off">
+        </div>
     </div>
 
     <div id="experiencia">
@@ -157,30 +168,67 @@
         <a href="CV_Fernando_Santos_ATS_Final.pdf" target="_blank" class="btn btn-main"><i class="fas fa-file-pdf"></i> Descargar CV</a>
         <a href="https://www.linkedin.com/in/fernando-santos-it" target="_blank" class="btn btn-linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/FernandoSantos-7" target="_blank" class="btn btn-sec"><i class="fab fa-github"></i> GitHub</a>
-        <a href="#" class="btn btn-disabled"><i class="fas fa-graduation-cap"></i> Título Analista de sistemas de información</a>
+        <a href="#" class="btn btn-disabled"><i class="fas fa-graduation-cap"></i> Título (En trámite)</a>
     </div>
 </div>
 
 <script>
-    const text = `> chmod 777 access_granted... [OK]
+    const welcomeText = `> chmod 777 access_granted... [OK]
 > Fetching profile: Fernando Santos
 > Role: Cybersecurity Analyst / SOC Analyst [ACTIVE]
 > Education: Graduado en Sistemas de Información
 > Env: Monitoreando infraestructura crítica gubernamental...
-> Tech Stack: Kali Linux, JS, Python, SQL, Pentesting Tools...
-> Connection: Secure & ready for deployment.`;
+> [SISTEMA LISTO] Escribí un comando para interactuar.\n`;
 
     let i = 0;
-    const speed = 25;
+    const speed = 20;
+    const typeElement = document.getElementById("type-text");
+    const inputArea = document.getElementById("input-area");
+    const cmdInput = document.getElementById("cmd-input");
 
     function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("type-text").innerHTML += text.charAt(i);
+        if (i < welcomeText.length) {
+            typeElement.innerHTML += welcomeText.charAt(i);
             i++;
             setTimeout(typeWriter, speed);
+        } else {
+            inputArea.style.display = "flex";
+            cmdInput.focus();
         }
     }
     window.onload = typeWriter;
+
+    // LÓGICA DE COMANDOS INTERACTIVOS
+    cmdInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            let input = cmdInput.value.toLowerCase().trim();
+            typeElement.innerHTML += `\nchmod777@fsantos:~# ${cmdInput.value}\n`;
+            
+            if (input === "help") {
+                typeElement.innerHTML += `> Comandos disponibles:
+  [scan]  - Simular escaneo de infraestructura de red (Nmap).
+  [clear] - Limpiar la consola de comandos.
+  [about] - Ver un resumen corto del perfil.\n`;
+            } else if (input === "scan") {
+                typeElement.innerHTML += `> Iniciando Nmap 7.92...
+> Escaneando puertos en servidor gubernamental ficticio...
+  [PORT 22/tcp]  -> OPEN  (SSH - Secure Shell)
+  [PORT 80/tcp]  -> OPEN  (HTTP - OWASP Risk Check: OK)
+  [PORT 443/tcp] -> OPEN  (HTTPS - SSL/TLS Hardened)
+> Escaneo finalizado. 0 vulnerabilidades críticas detectadas.\n`;
+            } else if (input === "clear") {
+                typeElement.innerHTML = "> Consola reiniciada.\n";
+            } else if (input === "about") {
+                typeElement.innerHTML += `> Fernando Santos: Analista enfocado en ciberdefensa, hardening y respuesta ante incidentes.\n`;
+            } else if (input !== "") {
+                typeElement.innerHTML += `> Comando no reconocido. Escribí 'help' para ver las opciones disponibles.\n`;
+            }
+            
+            cmdInput.value = "";
+            // Auto-scroll hacia abajo en la terminal
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+    });
 </script>
 
 </body>
