@@ -140,7 +140,7 @@ h2 {
   padding-bottom: 15px;
 }
 
-/* Asignación de tus colores específicos a los títulos h2 */
+/* Colores asignados a tus títulos h2 */
 #experiencia h2 { color: var(--title-exp); }
 #soc h2 { color: var(--title-soc); }
 #bunker h2 { color: var(--title-cert); }
@@ -274,7 +274,7 @@ h2 {
   transition: 0.4s;
 }
 
-/* Animaciones y destellos de color al pasar el cursor */
+/* Animaciones de hover individuales */
 .skill-kali:hover { border-color: #fca326; color: #fca326; background: rgba(252, 163, 38, 0.05); }
 .skill-kali:hover .kali-vector { fill: #fca326; filter: drop-shadow(0 0 10px rgba(252, 163, 38, 0.7)); }
 .skill-debian:hover { border-color: #d70a53; color: #d70a53; background: rgba(215, 10, 83, 0.05); }
@@ -393,7 +393,7 @@ h2 {
         </p>
         <div class="credential-grid">
             <div class="credential-tile">
-                <img src="Certificado-Introducción-a-la-Ciberseguridad-EducaciónIT.png" alt="Introducción a la Ciberseguridad" onerror="this.src='https://via.placeholder.com/220x120.png/161b22/39ff14?text=EducacionIT+Certified'">
+                <img src="images/Certificado-Introducción-a-la-Ciberseguridad-EducaciónIT..png" alt="Introducción a la Ciberseguridad" onerror="this.src='https://via.placeholder.com/220x120.png/161b22/39ff14?text=EducacionIT+Certified'">
                 <h3>Introducción a la Ciberseguridad</h3>
                 <p>EducaciónIT • Aprobado el 24 de Abril de 2026</p>
             </div>
@@ -459,7 +459,7 @@ h2 {
 </div>
 
 <script>
-// LÓGICA DE LA TERMINAL INTERACTIVA
+// LÓGICA DE LA TERMINAL REPARADA
 const text = `> chmod 777 access_granted... [OK]
 > Fetching profile: Fernando Santos
 > Role: Cybersecurity Analyst / SOC Analyst [ACTIVE]
@@ -467,16 +467,16 @@ const text = `> chmod 777 access_granted... [OK]
 > Vault: Búnker de Certificados Desbloqueado.
 > [SYSTEM READY] Escribí 'help' para comandos.\n`;
 
-let i = 0;
+let idx = 0; 
 const speed = 20;
 const terminal = document.getElementById("terminal-content"); 
 const inputArea = document.getElementById("input-area");
 const input = document.getElementById("cmd-input");
 
 function typeWriter() {
-    if (i < text.length) {
-        terminal.innerHTML += text.charAt(i);
-        i++;
+    if (idx < text.length) {
+        terminal.innerHTML += text.charAt(idx);
+        idx++;
         setTimeout(typeWriter, speed);
     } else {
         inputArea.style.display = "flex";
