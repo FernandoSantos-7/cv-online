@@ -37,7 +37,7 @@ body {
   padding: 0 40px;
 }
 
-/* 2. NAVEGACIÓN CONSULTORÍA (De la maqueta) */
+/* 2. NAVEGACIÓN */
 nav {
   background: rgba(13, 17, 23, 0.9);
   backdrop-filter: blur(10px);
@@ -80,7 +80,7 @@ nav a:hover { color: var(--terminal-green); }
 h1 { color: #f0f6fc; font-size: 3.5rem; line-height: 1.1; margin-bottom: 10px; }
 .tagline { color: var(--terminal-green); font-family: 'Space Mono', monospace; font-size: 1.2rem; }
 
-/* 4. FASE 1: TERMINAL INTERACTIVA CHMOD777 (Intacta y funcional) */
+/* 4. FASE 1: TERMINAL INTERACTIVA CHMOD777 */
 .terminal-container {
   background: #000;
   border-radius: 8px;
@@ -192,7 +192,7 @@ h2 {
   100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
 }
 
-/* 7. FASE 3: BÚNKER DE CERTIFICADOS HEXAGONAL (Placeholder) */
+/* 7. FASE 3: BÚNKER DE CERTIFICADOS TUYO MODIFICADO (Intacto) */
 .credential-grid {
   display: grid;
   gap: 20px;
@@ -211,7 +211,6 @@ h2 {
   cursor: default;
 }
 
-/* Efecto de activación de color de la maqueta */
 .credential-tile img {
   border-radius: 8px;
   height: 120px;
@@ -233,11 +232,11 @@ h2 {
 .credential-tile h3 { color: #f0f6fc; font-size: 0.95rem; margin-bottom: 5px; }
 .credential-tile p { color: var(--text-dim); font-size: 0.75rem; }
 
-/* 8. FASE 2: STACK TECNOLÓGICO INTERACTIVO CON LOGOS */
+/* 8. FASE 2: STACK DE DEFENSA CORREGIDO (8 casilleros simétricos con dragón y logos correctos) */
 .skills-grid {
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .skill-item {
@@ -255,13 +254,17 @@ h2 {
 
 .skill-item:hover { transform: translateY(-10px) scale(1.03); }
 
-/* Animación de colores individuales de la maqueta */
+/* Iluminación de bordes y colores específicos */
 .skill-kali:hover { border-color: #fca326; color: #fca326; background: rgba(252, 163, 38, 0.05); }
 .skill-python:hover { border-color: #3776ab; color: #3776ab; background: rgba(55, 118, 171, 0.05); }
 .skill-siem:hover { border-color: #ff4500; color: #ff4500; background: rgba(255, 69, 0, 0.05); }
 .skill-sql:hover { border-color: #00758f; color: #00758f; background: rgba(0, 117, 143, 0.05); }
+.skill-pentest:hover { border-color: #3fb950; color: #3fb950; background: rgba(63, 185, 80, 0.05); }
+.skill-js:hover { border-color: #f7df1e; color: #f7df1e; background: rgba(247, 223, 30, 0.05); }
+.skill-html:hover { border-color: #e34f26; color: #e34f26; background: rgba(227, 79, 38, 0.05); }
+.skill-css:hover { border-color: #1572b6; color: #1572b6; background: rgba(21, 114, 182, 0.05); }
 
-/* 9. FOOTER & ACCIONES UNIFICADAS */
+/* 9. FOOTER Y ACCIONES */
 .footer-actions {
   display: flex;
   flex-wrap: wrap;
@@ -291,7 +294,6 @@ h2 {
 @media (max-width: 600px) {
     h1 { font-size: 2.5rem; }
     .hero { margin-bottom: 30px; }
-    .card .company { display: block; margin-bottom: 5px; }
 }
     </style>
 </head>
@@ -331,7 +333,7 @@ h2 {
             </div>
             <h3>Analista de Ciberseguridad & Monitoreo</h3>
             <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 10px;">
-                Especializado en la defensa de infraestructura crítica gubernamental y gestión avanzada de incidentes de red.
+                Especializado en la defense de infraestructura crítica gubernamental y gestión avanzada de incidentes de red.
             </p>
         </div>
 
@@ -348,7 +350,7 @@ h2 {
     </div>
 
     <div id="soc">
-        <h2><i class="fa-solid fa-chart-line"></i> Dashboard SIEM (Simulación SOC)</h2>
+        <h2><i class="fa-solid fa-chart-line"></i> Centro de Monitoreo SOC (Simulación SIEM)</h2>
         <div class="siem-grid">
             <div class="siem-card">
                 <p class="siem-title">Logs de Red Analizados</p>
@@ -365,14 +367,11 @@ h2 {
 
     <div id="bunker">
         <h2><i class="fa-solid fa-vault"></i> Búnker de Certificados</h2>
-        <p style="color: var(--text-dim); margin-bottom: 25px; font-size: 0.9rem; max-width: 700px;">
-            Este espacio está diseñado para subir mis certificados reales.
-        </p>
         <div class="credential-grid">
             <div class="credential-tile">
                 <img src="https://via.placeholder.com/220x120.png/161b22/3fb950?text=Security%2B" alt="Certificación 1">
                 <h3>Cybersecurity Associate</h3>
-                <p>Formación en Ciberdefensa</p>
+                <p>Formación Anclada en Ciberdefensa</p>
             </div>
             <div class="credential-tile">
                 <img src="https://via.placeholder.com/220x120.png/161b22/fca326?text=Ethical Hacking" alt="Certificación 2">
@@ -391,7 +390,7 @@ h2 {
         <h2><i class="fa-solid fa-microchip"></i> Stack de Defensa</h2>
         <div class="skills-grid">
             <div class="skill-item skill-kali">
-                <i class="fab fa-linux fa-3x" style="color: #fca326;"></i>
+                <i class="fa-solid fa-dragon fa-3x" style="color: #fca326;"></i>
                 <p>Kali Linux</p>
             </div>
             <div class="skill-item skill-python">
@@ -406,13 +405,21 @@ h2 {
                 <i class="fas fa-database fa-3x" style="color: #00758f;"></i>
                 <p>SQL Server Sec</p>
             </div>
-            <div class="skill-item">
+            <div class="skill-item skill-pentest">
                 <i class="fas fa-shield-virus fa-3x" style="color: #3fb950;"></i>
                 <p>Pentesting Tools</p>
             </div>
-            <div class="skill-item">
-                <i class="fab fa-react fa-3x" style="color: #61dafb;"></i>
+            <div class="skill-item skill-js">
+                <i class="fab fa-js fa-3x" style="color: #f7df1e;"></i>
                 <p>JS / React / Node</p>
+            </div>
+            <div class="skill-item skill-html">
+                <i class="fab fa-html5 fa-3x" style="color: #e34f26;"></i>
+                <p>HTML5</p>
+            </div>
+            <div class="skill-item skill-css">
+                <i class="fab fa-css3-alt fa-3x" style="color: #1572b6;"></i>
+                <p>CSS3</p>
             </div>
         </div>
     </div>
@@ -426,7 +433,7 @@ h2 {
 </div>
 
 <script>
-// LÓGICA DE LA TERMINAL INTERACTIVA (FASE 1)
+// LÓGICA DE LA TERMINAL INTERACTIVA
 const text = `> chmod 777 access_granted... [OK]
 > Fetching profile: Fernando Santos
 > Role: Cybersecurity Analyst / SOC Analyst [ACTIVE]
@@ -466,18 +473,18 @@ input.addEventListener("keydown", (e) => {
         } else if (val === "clear") {
             terminal.innerHTML = "> Consola reiniciada.\n";
         } else if (val === "about") {
-            terminal.innerHTML += "> Fernando Santos: Analista enfocado en ciberdefensa, hardening y respuesta ante incidentes en el sector gubernamental.\n";
+            terminal.innerHTML += "> Fernando Santos: Analista enfocado en ciberdefensa, hardening y respuesta ante incidentes en infraestructura crítica.\n";
         } else if (val !== "") {
-            terminal.innerHTML += `> Comando '${val}' no reconocido. Escribí 'help' para opciones.\n`;
+            terminal.innerHTML += `> Comando '${val}' no reconocido. Escribí 'help' para ver opciones.\n`;
         }
         input.value = "";
     }
 });
 
-// LÓGICA DE MONITOREO SIEM DINÁMICO (FASE 2)
+// LÓGICA DE MONITOREO SIEM DINÁMICO
 let logs = 14240;
 setInterval(() => {
-    logs += Math.floor(Math.random() * 5) + 1; // Suma eventos aleatorios
+    logs += Math.floor(Math.random() * 5) + 1;
     document.getElementById("log-count").innerText = logs.toLocaleString();
 }, 2500);
 </script>
