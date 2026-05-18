@@ -192,7 +192,7 @@ h2 {
   100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
 }
 
-/* 7. FASE 3: BÚNKER DE CERTIFICADOS MODIFICADO POR VOS (Intacto) */
+/* 7. FASE 3: BÚNKER DE CERTIFICADOS DE FERNANDO */
 .credential-grid {
   display: grid;
   gap: 20px;
@@ -232,11 +232,11 @@ h2 {
 .credential-tile h3 { color: #f0f6fc; font-size: 0.95rem; margin-bottom: 5px; }
 .credential-tile p { color: var(--text-dim); font-size: 0.75rem; }
 
-/* 8. FASE 2: STACK DE DEFENSA CON LOGO DRAGÓN KALI OFICIAL */
+/* 8. FASE 2: STACK DE DEFENSA CON DEBIAN Y DRAGÓN KALI ORIGINAL */
 .skills-grid {
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .skill-item {
@@ -255,7 +255,7 @@ h2 {
 
 .skill-item:hover { transform: translateY(-10px) scale(1.03); }
 
-/* SVG REDISEÑADO CON EL TRAZO DEL DRAGÓN OFICIAL DE KALI */
+/* SVG del Dragón Oficial de Kali Linux */
 .kali-vector {
   width: 55px;
   height: 55px;
@@ -268,8 +268,9 @@ h2 {
   filter: drop-shadow(0 0 10px rgba(252, 163, 38, 0.7));
 }
 
-/* Iluminación de bordes y colores específicos */
+/* Iluminación de bordes y efectos hover */
 .skill-kali:hover { border-color: #fca326; color: #fca326; background: rgba(252, 163, 38, 0.05); }
+.skill-debian:hover { border-color: #d70a53; color: #d70a53; background: rgba(215, 10, 83, 0.05); }
 .skill-python:hover { border-color: #3776ab; color: #3776ab; background: rgba(55, 118, 171, 0.05); }
 .skill-siem:hover { border-color: #ff4500; color: #ff4500; background: rgba(255, 69, 0, 0.05); }
 .skill-sql:hover { border-color: #00758f; color: #00758f; background: rgba(0, 117, 143, 0.05); }
@@ -409,6 +410,10 @@ h2 {
                 </svg>
                 <p>Kali Linux</p>
             </div>
+            <div class="skill-item skill-debian">
+                <i class="fab fa-debian fa-3x" style="color: #d70a53;"></i>
+                <p>Debian Linux</p>
+            </div>
             <div class="skill-item skill-python">
                 <i class="fab fa-python fa-3x" style="color: #3776ab;"></i>
                 <p>Python (Django)</p>
@@ -431,11 +436,7 @@ h2 {
             </div>
             <div class="skill-item skill-html">
                 <i class="fab fa-html5 fa-3x" style="color: #e34f26;"></i>
-                <p>HTML5</p>
-            </div>
-            <div class="skill-item skill-css">
-                <i class="fab fa-css3-alt fa-3x" style="color: #1572b6;"></i>
-                <p>CSS3</p>
+                <p>HTML5 / CSS3</p>
             </div>
         </div>
     </div>
