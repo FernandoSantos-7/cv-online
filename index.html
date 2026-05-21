@@ -128,7 +128,7 @@ h1:hover {
   background-size: 100% 4px;
   z-index: 2;
   pointer-events: none; 
-  animation: scanlines 5s linear infinite; /* Movimiento de las líneas */
+  animation: scanlines 5s linear infinite;
 }
 
 @keyframes scanlines {
@@ -392,6 +392,51 @@ h2 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* EFECTO 5: BOTÓN FLOTANTE DE WHATSAPP CON PULSO */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 35px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: pulse-wpp 2s infinite; 
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-5px);
+  background-color: #128C7E;
+  color: #FFF;
+  box-shadow: 0px 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulse-wpp {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+  }
+}
     </style>
 </head>
 <body>
@@ -544,6 +589,10 @@ h2 {
     </div>
 </div>
 
+<a href="https://wa.me/5491100000000?text=Hola%20Fernando,%20estuve%20viendo%20tu%20portfolio%20y%20me%20gustaría%20contactarme%20con%20vos." class="whatsapp-float" target="_blank" title="Contactame por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
 <script>
 // 1. LÓGICA DE LA TERMINAL
 const text = `> chmod 777 access_granted... [OK]
@@ -600,16 +649,16 @@ setInterval(() => {
     document.getElementById("log-count").innerText = logs.toLocaleString();
 }, 2500);
 
-// 3. NUEVA LÓGICA: ANIMACIÓN EN CASCADA (BOOT SEQUENCE)
+// 3. LÓGICA DE ANIMACIÓN EN CASCADA (BOOT SEQUENCE)
 const observer = new IntersectionObserver((entries) => {
-    let delay = 0; // Inicia el contador de retraso
+    let delay = 0; 
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.classList.add('active');
             }, delay);
-            delay += 100; // Suma 100ms de retraso por cada elemento nuevo
-            observer.unobserve(entry.target); // Evita que se repita
+            delay += 100; 
+            observer.unobserve(entry.target); 
         }
     });
 }, { threshold: 0.1 }); 
