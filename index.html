@@ -20,7 +20,6 @@
   --border-color: #30363d;
   --alert-red: #ff5f56;
 
-  /* Mis colores neón independientes para cada título */
   --title-exp: #38bdf8;    
   --title-soc: #00f5ff;    
   --title-cert: #fb923c;   
@@ -39,13 +38,8 @@ body {
   cursor: crosshair; 
 }
 
-/* Los links y botones siguen teniendo la manito para que se note que son clickeables */
-a, button, input {
-  cursor: pointer;
-}
-input[type="text"] {
-  cursor: text;
-}
+a, button, input { cursor: pointer; }
+input[type="text"] { cursor: text; }
 
 .container {
   max-width: 1000px;
@@ -121,22 +115,25 @@ h1:hover {
   margin-bottom: 60px;
   overflow: hidden;
   padding: 20px;
-  position: relative; /* Necesario para el efecto CRT */
+  position: relative; 
 }
 
-/* EFECTO 3: LÍNEAS CRT DE MONITOR VIEJO SOBRE LA TERMINAL */
+/* EFECTO 3 MEJORADO: LÍNEAS CRT MÓVILES */
 .terminal-container::after {
   content: " ";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(57, 255, 20, 0.04) 50%);
   background-size: 100% 4px;
   z-index: 2;
-  pointer-events: none; /* Deja hacer clic en la consola sin bloquear */
+  pointer-events: none; 
+  animation: scanlines 5s linear infinite; /* Movimiento de las líneas */
+}
+
+@keyframes scanlines {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
 }
 
 .terminal-header { display: flex; gap: 8px; margin-bottom: 15px; position: relative; z-index: 3; }
@@ -308,19 +305,9 @@ h2 {
   z-index: 10;
 }
 
-.locked .tile-locked-overlay {
-  opacity: 1; 
-}
-
-.locked .fa-lock {
-  color: #ff4500;
-  font-size: 2rem;
-}
-
-.locked h3, .locked p, .locked img {
-  filter: blur(2px) grayscale(100%); 
-  opacity: 0.3;
-}
+.locked .tile-locked-overlay { opacity: 1; }
+.locked .fa-lock { color: #ff4500; font-size: 2rem; }
+.locked h3, .locked p, .locked img { filter: blur(2px) grayscale(100%); opacity: 0.3; }
 
 .access-denied-text {
   color: #ff4500;
@@ -395,11 +382,11 @@ h2 {
     .hero { margin-bottom: 30px; }
 }
 
-/* EFECTO 4: CLASES PARA ANIMACIÓN AL SCROLLEAR */
+/* EFECTO 4 MEJORADO: CLASES PARA ANIMACIÓN EN CASCADA */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
 }
 .reveal.active {
   opacity: 1;
@@ -423,7 +410,7 @@ h2 {
         <div class="target-role">> Cybersecurity Analyst | SOC Analyst</div>
     </div>
 
-    <div class="terminal-container">
+    <div class="terminal-container reveal">
         <div class="terminal-header">
             <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
         </div>
@@ -461,13 +448,13 @@ h2 {
 
     <div id="soc">
         <h2><i class="fa-solid fa-chart-line"></i> Centro de Monitoreo SOC (Simulación SIEM)</h2>
-        <div class="siem-grid reveal">
-            <div class="siem-card">
+        <div class="siem-grid">
+            <div class="siem-card reveal">
                 <p class="siem-title">Logs de Red Analizados</p>
                 <div class="siem-val" id="log-count">14,240</div>
                 <p style="font-size: 0.75rem; color: var(--text-dim);"><span class="pulse"></span> TRÁFICO EN VIVO</p>
             </div>
-            <div class="siem-card">
+            <div class="siem-card reveal">
                 <p class="siem-title">Infraestructura Crítica</p>
                 <div class="siem-val" style="color: var(--accent-blue);">GUBERNAMENTAL</div>
                 <p style="font-size: 0.75rem; color: var(--text-dim);"><span class="pulse"></span> FIREWALL: ACTIVE</p>
@@ -513,36 +500,36 @@ h2 {
 
     <div id="skills">
         <h2><i class="fa-solid fa-microchip"></i> Stack</h2>
-        <div class="skills-grid reveal">
-            <div class="skill-item skill-kali">
+        <div class="skills-grid">
+            <div class="skill-item skill-kali reveal">
                 <i class="fa-solid fa-dragon fa-3x" style="color: #8b949e; transition: 0.4s;"></i>
                 <p style="font-weight:700;">Kali Linux</p>
             </div>
-            <div class="skill-item skill-debian">
+            <div class="skill-item skill-debian reveal">
                 <i class="fab fa-debian fa-3x" style="color: #8b949e;"></i>
                 <p style="font-weight:700;">Debian</p>
             </div>
-            <div class="skill-item skill-python">
+            <div class="skill-item skill-python reveal">
                 <i class="fab fa-python fa-3x" style="color: #8b949e;"></i>
                 <p style="font-weight:700;">Python (Django)</p>
             </div>
-            <div class="skill-item skill-sql">
+            <div class="skill-item skill-sql reveal">
                 <i class="fas fa-database fa-3x" style="color: #8b949e;"></i>
                 <p style="font-weight:700;">SQL Server Sec</p>
             </div>
-            <div class="skill-item skill-pentest">
+            <div class="skill-item skill-pentest reveal">
                 <i class="fas fa-shield-virus fa-3x" style="color: #8b949e;"></i>
                 <p style="font-weight:700;">Pentesting Tools</p>
             </div>
-            <div class="skill-item skill-js">
+            <div class="skill-item skill-js reveal">
                 <i class="fab fa-js fa-3x" style="color: #8b949e;"></i>
                 <p style="font-weight:700;">JavaScript</p>
             </div>
-            <div class="skill-item skill-html">
+            <div class="skill-item skill-html reveal">
                 <i class="fab fa-html5 fa-3x" style="color: #8b949e;"></i>
                 <p style="font-weight:700;">HTML5 / CSS3</p>
             </div>
-            <div class="skill-item skill-siem">
+            <div class="skill-item skill-siem reveal">
                 <i class="fas fa-satellite-dish fa-3x" style="color: #8b949e;"></i>
                 <p style="font-weight:700;">SIEM Monitoring</p>
             </div>
@@ -613,16 +600,20 @@ setInterval(() => {
     document.getElementById("log-count").innerText = logs.toLocaleString();
 }, 2500);
 
-// 3. NUEVA LÓGICA: REVELAR ELEMENTOS AL SCROLLEAR
+// 3. NUEVA LÓGICA: ANIMACIÓN EN CASCADA (BOOT SEQUENCE)
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    let delay = 0; // Inicia el contador de retraso
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            setTimeout(() => {
+                entry.target.classList.add('active');
+            }, delay);
+            delay += 100; // Suma 100ms de retraso por cada elemento nuevo
+            observer.unobserve(entry.target); // Evita que se repita
         }
     });
-}, { threshold: 0.1 }); // Se activa cuando el 10% del elemento es visible
+}, { threshold: 0.1 }); 
 
-// Selecciona todos los elementos con la clase "reveal" y los observa
 document.querySelectorAll('.reveal').forEach((el) => {
     observer.observe(el);
 });
